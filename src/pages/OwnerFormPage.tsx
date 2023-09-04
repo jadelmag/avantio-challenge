@@ -5,7 +5,6 @@ import Button from "../components/button";
 import Input from "../components/input";
 import Title from "../components/title";
 import { setOwnerData } from "../store/owner";
-import { saveOnLocalStorage } from "../utils/localstorage";
 import { ownerSchema } from "../validations/ownerSchema";
 
 const OwnerFormPage = () => {
@@ -29,7 +28,6 @@ const OwnerFormPage = () => {
 		validationSchema: ownerSchema,
 		onSubmit: () => {
 			const data = { ...values };
-			saveOnLocalStorage(data, "owner");
 			dispatch(setOwnerData(data));
 			navigate("/summary");
 		},
@@ -37,7 +35,7 @@ const OwnerFormPage = () => {
 
 	return (
 		<>
-			<Title text={"Owner"} />
+			<Title text="Owner" />
 			<Input
 				id="name"
 				name="name"

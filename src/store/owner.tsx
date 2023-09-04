@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface OwnerState {
+export interface OwnerState {
 	name: string;
 	email: string;
 	phone: string;

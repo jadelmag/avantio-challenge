@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/button";
@@ -10,10 +10,6 @@ import Textarea from "../components/textarea";
 import Title from "../components/title";
 import { types } from "../mockdata/accomodation.mock";
 import { setAccommodationData } from "../store/accommodation";
-import {
-	loadDataFromLocalStorage,
-	saveOnLocalStorage,
-} from "../utils/localstorage";
 import { accommodationSchema } from "../validations/accommodationSchema";
 import { MAX_HEIGHT, MAX_WIDTH } from "../validations/dimenstions";
 
@@ -29,7 +25,6 @@ const AccommodationPage = () => {
 		values,
 		errors,
 		touched,
-		setValues,
 		handleChange,
 		handleSubmit,
 		handleBlur,
@@ -43,7 +38,6 @@ const AccommodationPage = () => {
 		validationSchema: accommodationSchema,
 		onSubmit: () => {
 			const data = { ...values, images };
-			saveOnLocalStorage(data, "accommodation");
 			dispatch(setAccommodationData(data));
 			navigate("/owner");
 		},
@@ -78,24 +72,6 @@ const AccommodationPage = () => {
 			}
 		}
 	};
-
-	useEffect(() => {
-		const data = loadDataFromLocalStorage("accommodation");
-		const loadedData = {
-			name: data.name || "",
-			address: data.address || "",
-			description: data.description || "",
-			type: data.type || types[0].value,
-		};
-		const type: string = data.type || types[0].value;
-		const images: string[] = data.images || [];
-		const values = { ...loadedData, images };
-		setValues(loadedData);
-		setType(type);
-		setImages(images);
-		dispatch(setAccommodationData(values));
-		// eslint-disable-next-line
-	}, []);
 
 	return (
 		<>

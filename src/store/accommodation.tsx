@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface AccommodationState {
+export interface AccommodationState {
 	name: string;
 	address: string;
 	description: string;
