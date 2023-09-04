@@ -1,5 +1,9 @@
-import { ChangeEvent, FC } from "react";
-import { InputProps } from "./input.interface";
+import { FC } from "react";
+import {
+	DefaultInputProps,
+	InputFileProps,
+	InputProps,
+} from "./input.interface";
 
 const Input: FC<InputProps> = ({
 	id,
@@ -18,6 +22,7 @@ const Input: FC<InputProps> = ({
 	return (
 		<div className="flex flex-col justify-center mt-8 mx-4">
 			<label
+				aria-label="title"
 				htmlFor={id}
 				className="block mb-2 text-sm font-medium text-gray-900"
 			>
@@ -49,16 +54,6 @@ const Input: FC<InputProps> = ({
 	);
 };
 
-interface DefaultInputProps {
-	id: string;
-	name: string;
-	type: string;
-	value: string;
-	placeholder?: string;
-	handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-	handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
-}
-
 const DefaultInput: FC<DefaultInputProps> = ({
 	id,
 	name,
@@ -74,6 +69,7 @@ const DefaultInput: FC<DefaultInputProps> = ({
 			name={name}
 			type={type}
 			value={value}
+			aria-label="input"
 			placeholder={placeholder}
 			className="w-50 md:w-full p-2 border rounded resize-none focus:border-blue-300 focus:outline-none"
 			onChange={handleChange}
@@ -82,17 +78,12 @@ const DefaultInput: FC<DefaultInputProps> = ({
 	);
 };
 
-interface InputFileProps {
-	id: string;
-	multiple?: boolean;
-	handleFileChange: (event: ChangeEvent<HTMLInputElement>) => void;
-}
-
 const InputFile: FC<InputFileProps> = ({ id, multiple, handleFileChange }) => {
 	return (
 		<input
 			id={id}
 			type="file"
+			aria-label="input-file"
 			multiple={multiple}
 			className="focus:outline-none focus:border-blue-500"
 			onChange={handleFileChange}

@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { RenderResult, render } from "@testing-library/react";
+import { RenderResult, render, screen } from "@testing-library/react";
 import Dropdown from ".";
 import { types } from "../../mockdata/accomodation.mock";
 import { DropDownProps } from "./dropdown.interface";
@@ -28,11 +28,26 @@ describe("Unit Test Dropdown", () => {
 		);
 	});
 
-	test("render component", () => {});
+	afterEach(() => {
+		component.unmount();
+	});
 
-	test("render component with image", () => {});
+	test("render component without crashing", () => {
+		const dropdown = screen.getByText(/Type/i);
+		expect(dropdown).toBeInTheDocument();
+	});
 
-	test("render component with text", () => {});
+	test("render component with label crashing", () => {
+		const dropdown = screen.getByLabelText("label");
+		expect(dropdown.innerHTML).toBe("Type");
+	});
 
-	test("render component with author", () => {});
+	test("render component with value options", () => {
+		const villa = screen.getByText(/Villa/i);
+		const house = screen.getByText(/House/i);
+		const apartment = screen.getByText(/Apartment/i);
+		expect(villa).toBeInTheDocument();
+		expect(house).toBeInTheDocument();
+		expect(apartment).toBeInTheDocument();
+	});
 });

@@ -17,6 +17,22 @@ export interface InputProps {
 	) => void | undefined;
 }
 
+export interface DefaultInputProps {
+	id: string;
+	name: string;
+	type: string;
+	value: string;
+	placeholder?: string;
+	handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+	handleBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+}
+
+export interface InputFileProps {
+	id: string;
+	multiple?: boolean;
+	handleFileChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
 type InputType =
 	| "text"
 	| "number"

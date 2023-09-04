@@ -93,11 +93,12 @@ const AccommodationPage = () => {
 		setType(type);
 		setImages(images);
 		dispatch(setAccommodationData(values));
+		// eslint-disable-next-line
 	}, []);
 
 	return (
 		<>
-			<h1 className="flex justify-center text-2xl font-bold">Accomodation</h1>
+			<h1 className="flex justify-center text-2xl font-bold">Accommodation</h1>
 			<Input
 				id="name"
 				name="name"
