@@ -7,6 +7,7 @@ import Dropdown from "../components/dropdown";
 import ImageFile from "../components/imagefile";
 import Input from "../components/input";
 import Textarea from "../components/textarea";
+import Title from "../components/title";
 import { types } from "../mockdata/accomodation.mock";
 import { setAccommodationData } from "../store/accommodation";
 import {
@@ -98,7 +99,7 @@ const AccommodationPage = () => {
 
 	return (
 		<>
-			<h1 className="flex justify-center text-2xl font-bold">Accommodation</h1>
+			<Title text={"Accommodation"} />
 			<Input
 				id="name"
 				name="name"

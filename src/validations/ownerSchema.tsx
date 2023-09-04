@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { regexEmail, regexOnlyDigits } from "./regex";
 
-export const ownerDataSchema = yup.object().shape({
+export const ownerSchema = yup.object().shape({
 	name: yup
 		.string()
 		.required("Name is required")
@@ -12,7 +12,7 @@ export const ownerDataSchema = yup.object().shape({
 		.email("Must be a valid email")
 		.matches(regexEmail, "Must be a valid email")
 		.required("Email is required"),
-	phoneNumber: yup
+	phone: yup
 		.string()
 		.matches(regexOnlyDigits, "Phone number must be a maximum of 9 digits")
 		.nullable(),
