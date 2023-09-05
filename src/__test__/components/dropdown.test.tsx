@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import Dropdown from ".";
+import Dropdown from "../../components/dropdown";
+import { DropDownProps } from "../../components/dropdown/dropdown.interface";
 import { types } from "../../mockdata/accomodation.mock";
-import { DropDownProps } from "./dropdown.interface";
 
 describe("Unit Test Dropdown", () => {
 	const dropdownMock: DropDownProps = {

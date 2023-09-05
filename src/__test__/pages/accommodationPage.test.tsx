@@ -1,17 +1,17 @@
 import "@testing-library/jest-dom";
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import { store } from "./store";
+import AccommodationPage from "../../pages/AccommodationPage";
+import { store } from "../../store";
 
-describe("Unit Test App", () => {
+describe("Unit Test AccommodationPage", () => {
 	test("render component without crashing", async () => {
 		await act(() => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -28,7 +28,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -45,7 +45,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -61,7 +61,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -76,7 +76,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -91,7 +91,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -106,7 +106,7 @@ describe("Unit Test App", () => {
 			render(
 				<Provider store={store}>
 					<BrowserRouter>
-						<App />
+						<AccommodationPage />
 					</BrowserRouter>
 				</Provider>,
 			);
@@ -115,22 +115,5 @@ describe("Unit Test App", () => {
 		expect(button).toBeInTheDocument();
 		expect(button.innerHTML).toBe("Next");
 		expect(button.getAttribute("type")).toBe("submit");
-	});
-
-	test("check click button", async () => {
-		const handleClick = jest.fn();
-		await act(() => {
-			render(
-				<Provider store={store}>
-					<BrowserRouter>
-						<App />
-					</BrowserRouter>
-				</Provider>,
-			);
-		});
-		const button = screen.getByRole("button");
-		await fireEvent.click(button);
-		// button is disabled
-		expect(handleClick).toHaveBeenCalledTimes(0);
 	});
 });

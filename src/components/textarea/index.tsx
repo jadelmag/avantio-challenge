@@ -20,6 +20,7 @@ const Textarea: FC<TextareaProps> = ({
 				{title}
 			</label>
 			<textarea
+				id={`textarea-${name}`}
 				aria-label="textarea"
 				className="w-50 md:w-full h-24 p-2 border rounded resize-none focus:border-blue-300 focus:outline-none"
 				name={name}

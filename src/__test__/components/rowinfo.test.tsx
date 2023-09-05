@@ -1,10 +1,11 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import RowInfo from ".";
-import { RowInfoProps } from "./rowinfo.interface";
+import RowInfo from "../../components/rowinfo";
+import { RowInfoProps } from "../../components/rowinfo/rowinfo.interface";
 
 describe("Unit Test RowInfo", () => {
 	const mockRowInput: RowInfoProps = {
+		id: "id_example",
 		title: "Title Example",
 		text: "Text Example",
 	};
@@ -16,7 +17,11 @@ describe("Unit Test RowInfo", () => {
 	>;
 	beforeEach(() => {
 		component = render(
-			<RowInfo title={mockRowInput.title} text={mockRowInput.text} />,
+			<RowInfo
+				id={mockRowInput.id}
+				title={mockRowInput.title}
+				text={mockRowInput.text}
+			/>,
 		);
 	});
 
@@ -29,7 +34,9 @@ describe("Unit Test RowInfo", () => {
 		expect(title).toBeInTheDocument();
 	});
 
-	test("render both properties", () => {
+	test("render get properties", () => {
+		const id = screen.getByText(/id_example/i);
+		expect(id.innerHTML).toBe(mockRowInput.id);
 		const title = screen.getByText(/Title Example/i);
 		expect(title.innerHTML).toBe(mockRowInput.title);
 		const text = screen.getByText(/Text Example/i);

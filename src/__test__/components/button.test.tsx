@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import Button from ".";
-import { ButtonProps } from "./button.interface";
+import Button from "../../components/button";
+import { ButtonProps } from "../../components/button/button.interface";
 
 describe("Unit Test Button", () => {
 	const buttonMock: ButtonProps = {

@@ -17,6 +17,7 @@ const Dropdown: FC<DropDownProps> = ({
 				Type
 			</label>
 			<select
+				id={`select-${name}`}
 				name={name}
 				aria-label={name}
 				className="w-50 md:w-full h-10 p-2 border rounded resize-none focus:border-blue-300 focus:outline-none"

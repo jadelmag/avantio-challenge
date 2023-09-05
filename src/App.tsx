@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import AccommodationPage from "./pages/AccommodationPage";
-import OwnerFormPage from "./pages/OwnerFormPage";
+import OwnerFormPage from "./pages/OwnerPage";
 import SummaryPage from "./pages/SummaryPage";
 
 function App() {

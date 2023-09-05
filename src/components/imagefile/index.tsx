@@ -14,7 +14,7 @@ const ImageFile: FC<ImageFileProps> = ({ images }) => {
 				<div key={`${index}-${url}`} className="w-20 h-20">
 					<img
 						aria-label="image"
-						className=" w-20 h-20"
+						className="w-30 h-30"
 						src={url}
 						alt={`Uploaded ${index}`}
 					/>

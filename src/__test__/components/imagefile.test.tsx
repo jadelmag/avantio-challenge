@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import ImageFile from ".";
 import Image1 from "../../assets/pngs/01.png";
 import Image2 from "../../assets/pngs/02.png";
-import { ImageFileProps } from "./imagefile.interface";
+import ImageFile from "../../components/imagefile";
+import { ImageFileProps } from "../../components/imagefile/imagefile.interface";
 
 describe("Unit Test Textarea", () => {
 	const mockImageFile: ImageFileProps = {

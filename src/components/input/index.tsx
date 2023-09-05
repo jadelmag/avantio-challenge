@@ -40,7 +40,10 @@ const Input: FC<InputProps> = ({
 						handleBlur={onBlur}
 					/>
 					{error && (
-						<span className="block mb-2 text-sm font-medium text-red-400">
+						<span
+							id={`error-${id}`}
+							className="block mb-2 text-sm font-medium text-red-400"
+						>
 							{msgError}
 						</span>
 					)}

@@ -1,5 +1,8 @@
 import "@testing-library/jest-dom";
-import { loadDataFromLocalStorage, saveOnLocalStorage } from "./localstorage";
+import {
+	loadDataFromLocalStorage,
+	saveOnLocalStorage,
+} from "../../utils/localstorage";
 
 describe("Unit Test Functions", () => {
 	test("save on local storage", () => {

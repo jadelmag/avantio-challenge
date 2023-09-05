@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import Textarea from ".";
-import { TextareaProps } from "./textarea.interface";
+import Textarea from "../../components/textarea";
+import { TextareaProps } from "../../components/textarea/textarea.interface";
 
 describe("Unit Test Textarea", () => {
 	const textareaMock: TextareaProps = {

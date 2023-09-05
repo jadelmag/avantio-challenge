@@ -10,6 +10,7 @@ const Button: React.FC<ButtonProps> = ({
 	return (
 		<div className="flex flex-col justify-center mt-8 mx-4">
 			<button
+				id="button"
 				type={type}
 				onClick={onClick}
 				className="w-50 md:w-full h-14 p-2 border rounded resize-none focus:outline-none text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-600 disabled:bg-gray-300"

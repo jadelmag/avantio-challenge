@@ -37,6 +37,7 @@ const SummaryPage = () => {
 				return (
 					<RowInfo
 						key={`${index}-${item.value}`}
+						id={item.id}
 						title={item.key}
 						text={item.value}
 					/>
@@ -49,6 +50,7 @@ const SummaryPage = () => {
 				return (
 					<RowInfo
 						key={`${index}-${item.value}`}
+						id={item.id}
 						title={item.key}
 						text={item.value}
 					/>

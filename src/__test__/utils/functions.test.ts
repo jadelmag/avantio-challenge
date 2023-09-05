@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { capitalizeFirstLetter, objectToArray } from "./functions";
+import { capitalizeFirstLetter, objectToArray } from "../../utils/functions";
 
 describe("Unit Test Functions", () => {
 	test("object to array function", () => {

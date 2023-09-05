@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import Input from ".";
-import { InputProps } from "./input.interface";
+import Input from "../../components/input";
+import { InputProps } from "../../components/input/input.interface";
 
 describe("Unit Test Dropdown", () => {
 	const mockInput: InputProps = {

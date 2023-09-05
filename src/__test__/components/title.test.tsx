@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { RenderResult, render, screen } from "@testing-library/react";
-import Title from ".";
-import { TitleProps } from "./title.interface";
+import Title from "../../components/title";
+import { TitleProps } from "../../components/title/title.interface";
 
 describe("Unit Test Title", () => {
 	const mockTitle: TitleProps = {
